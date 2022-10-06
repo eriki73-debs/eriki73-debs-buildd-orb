@@ -1,0 +1,7 @@
+description: >
+  Generates a suitable CircleCI configuration that allows
+  building Droidian packages.
+steps:
+  - run:
+      name: Generate config
+      command: <<include(scripts/generate.sh)>>

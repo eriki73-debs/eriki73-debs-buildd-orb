@@ -1,0 +1,9 @@
+version: 2.1
+
+description: >
+  Droidian-specific orb for package building. This is Droidian-specific,
+  you shouldn't really use this.
+
+display:
+  home_url: "https://droidian.org"
+  source_url: "https://github.com/droidian-releng/droidian-buildd-orb"
