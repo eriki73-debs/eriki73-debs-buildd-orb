@@ -111,9 +111,12 @@ jobs:
 EOF
 
 # Determine which architectures to build
-ARCHITECTURES="$(grep 'Architecture:' debian/control | awk '{ print $2 }' | sort -u | grep -v all)"
+ARCHITECTURES="$(grep 'Architecture:' debian/control | awk '{ print $2 }' | sort -u | grep -v all)" || true
 if echo "${ARCHITECTURES}" | grep -q "any"; then
     ARCHITECTURES="${AVAILABLE_ARCHITECTURES}"
+elif [ -z "${ARCHITECTURES}" ]; then
+    # Default to amd64
+    ARCHITECTURES="amd64"
 fi
 
 # Host arch specified?
