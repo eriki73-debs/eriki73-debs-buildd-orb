@@ -75,7 +75,7 @@ commands:
               -e RELENG_HOST_ARCH="<<parameters.host_arch>>" \\
               -v /tmp/buildd-results:/buildd \\
               -v ${PWD}/sources:/buildd/sources \\
-              quay.io/droidian/build-essential:<<parameters.suite>>-<<parameters.architecture>> \\
+              quay.io/eriki73-debs/build-essential:<<parameters.suite>>-<<parameters.architecture>> \\
               /bin/sh -c "cd /buildd/sources ; releng-build-package"
 
   deploy:
@@ -104,7 +104,7 @@ commands:
               -e INTAKE_SSH_USER \\
               -e INTAKE_SSH_KEY="\$(echo \${INTAKE_SSH_KEY} | base64 -d)" \\
               -v /tmp/buildd-results:/tmp/buildd-results \\
-              quay.io/droidian/build-essential:<<parameters.suite>>-<<parameters.architecture>> \\
+              quay.io/eriki73-debs/build-essential:<<parameters.suite>>-<<parameters.architecture>> \\
               /bin/sh -c "cd /tmp/buildd-results ; repo-droidian-sign.sh ; repo-droidian-deploy.sh"
 
 jobs:

@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  droidian-buildd-orb: droidian-releng/droidian-buildd-orb@dev:<<pipeline.git.revision>>
+  eriki73-debs-buildd-orb: eriki73-debs/eriki73-debs-buildd-orb@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.1
 
 filters: &filters
@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - droidian-buildd-orb/greet
+      - eriki73-debs-buildd-orb/greet
 workflows:
   test-deploy:
     jobs:
@@ -26,7 +26,7 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: droidian-releng/droidian-buildd-orb
+          orb-name: eriki73-debs/eriki73-debs-buildd-orb
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:

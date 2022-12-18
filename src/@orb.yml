@@ -6,4 +6,4 @@ description: >
 
 display:
   home_url: "https://droidian.org"
-  source_url: "https://github.com/droidian-releng/droidian-buildd-orb"
+  source_url: "https://github.com/eriki73-debs/eriki73-debs-buildd-orb"

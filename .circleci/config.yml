@@ -18,7 +18,7 @@ workflows:
       - orb-tools/review:
           filters: *filters
       - orb-tools/publish:
-          orb-name: droidian-releng/droidian-buildd-orb
+          orb-name: eriki73-debs/eriki73-debs-buildd-orb
           vcs-type: << pipeline.project.type >>
           requires:
             [orb-tools/lint, orb-tools/review, orb-tools/pack]
